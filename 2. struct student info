@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+struct Studentinfor {
+    char name[21];
+    int kor_score;
+    int eng_score;
+};
+
+int main() {
+    struct Studentinfor student[5];
+    int i;
+    int kor_sum=0, eng_sum=0;
+    for(i=0;i<5;i++){
+        scanf("%s %d %d", student[i].name, &student[i].kor_score, &student[i].eng_score);
+        kor_sum+=student[i].kor_score;
+        eng_sum+=student[i].eng_score;
+    }
+    printf("국어 평균 : %d\n", kor_sum/5);
+    printf("영어 평균 : %d\n", eng_sum/5);
+    return 0;
+}
