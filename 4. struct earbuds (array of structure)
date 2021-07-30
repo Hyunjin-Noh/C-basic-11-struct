@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+struct Manufactinfor{
+    char manufacturer[20];
+    int Fyear;//제조사 설립년도
+};
+struct Date{
+    int year;
+    int month;
+};
+struct Earbuds{
+    char name[20];
+    int price;
+    char rank;
+    struct Date ex_date;
+    struct Manufactinfor ex_manufactinfor;
+};
+
+int main() {
+    struct Earbuds e[3]={{"AirP", 140000, 'B', 2019, 3, "Banana", 1995}, {"QC", 35000, 'C', 2018, 12, "Peanut", 2010}, {"BIZ", 120000, 'A', 2018, 4, "Sung", 1985}};//배열 생성, 선언과 동시에 초기화
+
+    printf("Name\tprice\tRank\tYear\tMonth\tManufacturer\tFyear\n");
+    for(int i=0;i<3;i++){
+        printf("%s\t%d\t%c\t", e[i].name, e[i].price, e[i].rank); 
+        printf("%d\t%d\t%s\t\t%d\n", e[i].ex_date.year, e[i].ex_date.month, e[i].ex_manufactinfor.manufacturer, e[i].ex_manufactinfor.Fyear);
+    }
+    return 0;
+}
