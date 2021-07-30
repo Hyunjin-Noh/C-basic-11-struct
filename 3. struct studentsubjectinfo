@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+struct Subject {
+    char name[21];
+    int score;
+    char grade;
+};
+
+int main() {
+    struct Subject student1 = {"국어", 95, 'A'};
+    struct Subject student2 = {"영어", 87, 'C'};
+    struct Subject student3 = {"수학", 82, 'D'};
+    struct Subject student4 = {"사회", 80, 'D'};
+    struct Subject student5 = {"과학", 77, 'F'};
+
+    printf("과목명\t점수\t학점\n");
+    printf("%s\t%d\t%c\n", student1.name, student1.score, student1.grade);
+    printf("%s\t%d\t%c\n", student2.name, student2.score, student2.grade);
+    printf("%s\t%d\t%c\n", student3.name, student3.score, student3.grade);
+    printf("%s\t%d\t%c\n", student4.name, student4.score, student4.grade);
+    printf("%s\t%d\t%c\n", student5.name, student5.score, student5.grade);
+    return 0;
+}
