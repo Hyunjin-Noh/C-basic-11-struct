@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Earbuds{
+    char name[20];
+    int price;
+    char rank;
+};
+
+struct Earbuds sale(struct Earbuds n){
+    n.price=n.price/2;
+    
+    char name2[20];
+    int count=strlen(n.name);
+    for(int i=0;i<count;i++){
+        name2[i]=n.name[count-(i+1)];
+    }
+    name2[count]='\0';
+    strcpy(n.name,name2);
+    
+    return n;
+}
+
+int main(){
+    struct Earbuds ap={"AirP", 140000, 'B'};
+    /*
+    struct Earbuds ap;
+    strcpy(ap.name, "AirP")
+    ap.price=140000;
+    ap.rank='B';
+    */
+    printf("세일 전 가격 : %s\t%d\t%c\n", ap.name, ap.price, ap.rank);
+    ap=sale(ap);
+    printf("세일 후 가격 : %s\t%d\t%c\n", ap.name, ap.price, ap.rank);
+    return 0;
+}
