@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+struct Foodinfor {
+    char name[21];
+    char source[101];
+    int cooktime;
+};
+
+int main() {
+    struct Foodinfor food1;
+    printf("음식 : ");
+    scanf("%s", food1.name);
+    printf("재료 : ");
+    scanf("%s", food1.source);
+    printf("조리시간 : ");
+    scanf("%d", &food1.cooktime);
+    
+    printf("입력한 음식 정보는 아래와 같습니다.\n");
+    printf("음식 명 : %s\n", food1.name);
+    printf("재료 : %s\n", food1.source);
+    printf("조리시간 : 약 %d분", food1.cooktime);
+    
+    return 0;
+}
